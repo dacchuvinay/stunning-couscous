@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Trading Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Login Page -->
+    <div id="loginPage" class="login-container">
+        <div class="login-form">
+            <input type="password" id="password" placeholder="Enter Password">
+            <button onclick="checkPassword()">Login</button>
+            <a href="#" onclick="showSecurityQuestion()">Forgot Password?</a>
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <div id="mainApp" style="display: none;">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="hamburger" onclick="toggleNav()">☰</div>
+            <nav id="mainNav">
+                <button onclick="showDaily()">Daily Trades</button>
+                <button onclick="showWeekly()">Weekly Trades</button>
+                <button onclick="showMonthly()">Monthly Trades</button>
+            </nav>
+        </header>
+
+        <!-- Daily Trades Section -->
+        <div id="dailySection" class="page">
+            <h2>Daily Trades</h2>
+            <table class="trades-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Day</th>
+                        <th>Trade 1</th>
+                        <th>Trade 2</th>
+                        <th>Trade 3</th>
+                    </tr>
+                </thead>
+                <tbody id="dailyTradesBody"></tbody>
+            </table>
+            <button onclick="addNewDay()" class="bike-button">Add New Day</button>
+        </div>
+
+        <!-- Weekly Trades Section -->
+        <div id="weeklySection" class="page" style="display: none;">
+            <h2>Weekly Summary</h2>
+            <div class="input-group">
+                <input type="date" id="fromDate">
+                <input type="date" id="toDate">
+                <input type="number" id="currentCapital" placeholder="Current Capital">
+            </div>
+            <table class="capital-table">
+                <thead>
+                    <tr>
+                        <th>Week</th>
+                        <th>Capital Growth</th>
+                        <th>Achievement</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="weeklyDataBody"></tbody>
+            </table>
+            <canvas id="capitalChart"></canvas>
+            <div class="form-controls">
+                <button class="bike-button" onclick="saveWeeklyData()">Save</button>
+                <button class="bike-button" onclick="editWeeklyData()">Edit</button>
+                <button class="bike-button" onclick="cancelWeeklyEdit()">Cancel</button>
+            </div>
+        </div>
+
+        <!-- Monthly Trades Section -->
+        <div id="monthlySection" class="page" style="display: none;">
+            <h2>Monthly Summary</h2>
+            <canvas id="monthlyChart"></canvas>
+            <div id="monthlySummary"></div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="tradeModal" class="modal">
+        <div class="modal-content">
+            <h3>Trade Outcome</h3>
+            <button onclick="setTradeOutcome('target')">✅ Target Hit</button>
+            <button onclick="setTradeOutcome('stop')">❌ Stop Loss</button>
+            <button onclick="setTradeOutcome('none')">➖ No Trade</button>
+        </div>
+    </div>
+
+    <div id="securityModal" class="modal">
+        <div class="modal-content">
+            <p>Who developed this website?</p>
+            <input type="text" id="securityAnswer">
+            <button onclick="checkSecurityAnswer()">Submit</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

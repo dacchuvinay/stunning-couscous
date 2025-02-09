@@ -1,0 +1,90 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.login-container {
+    background: rgba(0,0,0,0.5);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    background: rgba(255,255,255,0.9);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.app-header {
+    background: #333;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.hamburger {
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.trades-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.trades-table th, .trades-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.trade-cell {
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background: white;
+    margin: 2rem auto;
+    padding: 2rem;
+    width: 300px;
+    border-radius: 5px;
+}
+
+.bike-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.page {
+    padding: 1rem;
+}
+
+.input-group {
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
